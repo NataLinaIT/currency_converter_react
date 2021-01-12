@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -15,13 +15,11 @@ export default class App extends Component {
         <Header />
         <div className="container" style={{ height: "100vh" }}>
           <main>
-            <Router basename={process.env.PUBLIC_URL}>
-              <Switch>
-                <Route exact path="/" component={Rate}></Route>
-                <Route exact path="/about" component={About}></Route>
-                <Route exact path="/contacts" component={Contacts}></Route>
-              </Switch>
-            </Router>
+            <Switch>
+              <Route exact path="/" component={Rate}></Route>
+              <Route path="/about" component={About}></Route>
+              <Route path="/contacts" component={Contacts}></Route>
+            </Switch>
           </main>
           <div className="container" id="cookie_info">
             <div className="site-content">
