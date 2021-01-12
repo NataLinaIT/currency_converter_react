@@ -15,7 +15,7 @@ export default class App extends Component {
         <Header />
         <div className="container" style={{ height: "100vh" }}>
           <main>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
               <Switch>
                 <Route exact path="/" component={Rate}></Route>
                 <Route exact path="/about" component={About}></Route>
